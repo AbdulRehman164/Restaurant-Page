@@ -13,6 +13,9 @@ export default function getHome() {
 
     mainHome.setAttribute('id', 'mainHome');
     introduction.classList.add('introduction');
+    burgerImage.classList.add('burger');
+    restaurantHeading.classList.add('restaurantHeading');
+    introPara.classList.add('introPara');
 
     burgerImage.src = burger;
     restaurantHeading.textContent = 'Star Bites';
