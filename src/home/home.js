@@ -1,4 +1,5 @@
 import burger from './burger.png';
+import './home.css';
 
 export default function getHome() {
   const content = document.querySelector('#content');
