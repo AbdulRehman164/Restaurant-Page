@@ -1,6 +1,9 @@
 import bruschetta from './Bruschetta.png';
 import artichoke from './Artichoke Dip.png';
 import skewers from './Chicken Satay Skewers.png';
+import salmon from './Grilled Salmon.png';
+import parmesan from './Chicken Parmesan.png';
+import stirFry from './Vegetable Stir-Fry.png';
 
 export default function getMenu() {
   const content = document.querySelector('#content');
@@ -75,11 +78,40 @@ export default function getMenu() {
 
   const mainCourseHeading = document.createElement('h2');
   mainCourseHeading.textContent = 'Main Courses';
+  function getMainCourseSection() {
+    const section = document.createElement('section');
+
+    const card = getMenuCards();
+
+    card.menuCardsHeading[0].textContent = 'Grilled Salmon';
+    card.menuCardsHeading[1].textContent = 'Chicken Parmesan';
+    card.menuCardsHeading[2].textContent = 'Vegetable Stir-Fry';
+
+    card.menuCardsPara[0].textContent =
+      'Tender salmon fillet grilled to perfection and served with a citrus-infused sauce, accompanied by roasted asparagus.';
+    card.menuCardsPara[1].textContent =
+      'Breaded chicken breast topped with marinara sauce, melted mozzarella, and served with a side of spaghetti.';
+    card.menuCardsPara[2].textContent =
+      'A medley of colorful vegetables sautéed in a savory sauce, served over steamed jasmine rice.';
+
+    card.menuCardsPricePara[0].textContent = '7$';
+    card.menuCardsPricePara[1].textContent = '9$';
+    card.menuCardsPricePara[2].textContent = '11$';
+
+    card.menuCardsImg[0].src = salmon;
+    card.menuCardsImg[1].src = parmesan;
+    card.menuCardsImg[2].src = stirFry;
+
+    section.append(...card.menuCards);
+
+    return section;
+  }
 
   content.append(
     menuHeading,
     appetizerHeading,
     getAppetizerSection(),
-    mainCourseHeading
+    mainCourseHeading,
+    getMainCourseSection()
   );
 }
