@@ -28,10 +28,8 @@ function navBar() {
     home.style.background = '#ffde73';
     home.style.color = 'chocolate';
 
-    home.addEventListener('click', getHome);
-    menu.addEventListener('click', getMenu);
-
     home.addEventListener('click', () => {
+      getHome();
       menu.style.background = 'chocolate';
       menu.style.color = '#efae2d';
       home.style.background = '#ffde73';
@@ -39,10 +37,19 @@ function navBar() {
     });
 
     menu.addEventListener('click', () => {
+      getMenu();
       home.style.background = 'chocolate';
       home.style.color = '#efae2d';
       menu.style.background = '#ffde73';
       menu.style.color = 'chocolate';
+    });
+
+    logoDiv.addEventListener('click', () => {
+      getHome();
+      menu.style.background = 'chocolate';
+      menu.style.color = '#efae2d';
+      home.style.background = 'chocolate';
+      home.style.color = '#efae2d';
     });
   }
   navigation();
