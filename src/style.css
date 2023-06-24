@@ -14,3 +14,18 @@ body {
 #content {
   padding: 30px;
 }
+h1 {
+  margin: 0px 20%;
+  text-align: center;
+  font-size: 4rem;
+  background-color: #ffde73;
+  align-self: center;
+  border-radius: 20px;
+  border: 20px solid chocolate;
+}
+h2 {
+  border: 10px solid chocolate;
+  background-color: #ffde73;
+  padding: 10px;
+  text-align: center;
+}

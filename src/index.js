@@ -1,6 +1,6 @@
-// import getHome from './home/home';
+import getHome from './home/home';
 import getMenu from './menu/menu';
 import './style.css';
 
-// getHome();
+getHome();
 getMenu();

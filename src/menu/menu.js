@@ -50,6 +50,7 @@ export default function getMenu() {
   appetizerHeading.textContent = 'Appetizers';
   function getAppetizerSection() {
     const section = document.createElement('section');
+    section.classList.add('menuSection');
 
     const card = getMenuCards();
 
@@ -81,6 +82,7 @@ export default function getMenu() {
   mainCourseHeading.textContent = 'Main Courses';
   function getMainCourseSection() {
     const section = document.createElement('section');
+    section.classList.add('menuSection');
 
     const card = getMenuCards();
 
@@ -107,6 +109,9 @@ export default function getMenu() {
 
     return section;
   }
+
+  appetizerHeading.classList.add('menuSectionHeading');
+  mainCourseHeading.classList.add('menuSectionHeading');
 
   content.append(
     menuHeading,
