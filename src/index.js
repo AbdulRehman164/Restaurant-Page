@@ -23,9 +23,27 @@ function navBar() {
   navbar.append(logoDiv, optionsDiv);
 
   function navigation() {
+    // inital rendreing
     getHome();
+    home.style.background = '#ffde73';
+    home.style.color = 'chocolate';
+
     home.addEventListener('click', getHome);
     menu.addEventListener('click', getMenu);
+
+    home.addEventListener('click', () => {
+      menu.style.background = 'chocolate';
+      menu.style.color = '#efae2d';
+      home.style.background = '#ffde73';
+      home.style.color = 'chocolate';
+    });
+
+    menu.addEventListener('click', () => {
+      home.style.background = 'chocolate';
+      home.style.color = '#efae2d';
+      menu.style.background = '#ffde73';
+      menu.style.color = 'chocolate';
+    });
   }
   navigation();
 }
