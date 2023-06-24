@@ -4,5 +4,7 @@ export default function getMenu() {
   const menuHeading = document.createElement('h1');
   menuHeading.textContent = 'Menu';
 
-  content.append(menuHeading);
+  const appetizerHeading = document.createElement('h2');
+  appetizerHeading.textContent = 'Appetizers';
+  content.append(menuHeading, appetizerHeading);
 }
