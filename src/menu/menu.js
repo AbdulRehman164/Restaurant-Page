@@ -60,5 +60,13 @@ export default function getMenu() {
     return section;
   }
 
-  content.append(menuHeading, appetizerHeading, getAppetizerSection());
+  const mainCourseHeading = document.createElement('h2');
+  mainCourseHeading.textContent = 'Main Courses';
+
+  content.append(
+    menuHeading,
+    appetizerHeading,
+    getAppetizerSection(),
+    mainCourseHeading
+  );
 }
