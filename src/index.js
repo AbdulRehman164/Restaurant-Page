@@ -47,4 +47,10 @@ function navBar() {
   }
   navigation();
 }
+
+function getFooter() {
+  const footer = document.querySelector('#footer');
+  footer.innerHTML = 'Copywright&copy; Abdul-Rehman';
+}
+getFooter();
 navBar();
