@@ -2,7 +2,7 @@ import getHome from './home/home';
 import getMenu from './menu/menu';
 import './style.css';
 
-function navigation() {
+function navBar() {
   const navbar = document.querySelector('#navbar');
   const logoDiv = document.createElement('div');
   const optionsDiv = document.createElement('div');
@@ -21,5 +21,12 @@ function navigation() {
   optionsDiv.append(home, menu, about);
 
   navbar.append(logoDiv, optionsDiv);
+
+  function navigation() {
+    getHome();
+    home.addEventListener('click', getHome);
+    menu.addEventListener('click', getMenu);
+  }
+  navigation();
 }
-navigation();
+navBar();
