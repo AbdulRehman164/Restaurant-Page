@@ -1,0 +1,48 @@
+h1 {
+  margin: 0px 20%;
+  text-align: center;
+  font-size: 4rem;
+  background-color: #ffde73;
+  align-self: center;
+  border-radius: 20px;
+  border: 20px solid chocolate;
+}
+.menu-card {
+  background-color: #ffde73;
+  display: flex;
+  flex-direction: column;
+  border: 20px solid chocolate;
+  border-radius: 20px;
+  width: 40%;
+  height: 30%;
+  padding: 20px;
+}
+.menu-card > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-end;
+}
+.menu-card h3 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 2.2rem;
+  background-color: #ffde73;
+  padding: 10px;
+  width: 30%;
+  text-align: center;
+  margin: 20px;
+  border: 10px solid chocolate;
+  border-radius: 10px;
+}
+.menu-card > img {
+  width: 200px;
+}
+#content section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}

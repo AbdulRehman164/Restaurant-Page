@@ -4,6 +4,7 @@ import skewers from './Chicken Satay Skewers.png';
 import salmon from './Grilled Salmon.png';
 import parmesan from './Chicken Parmesan.png';
 import stirFry from './Vegetable Stir-Fry.png';
+import './menu.css';
 
 export default function getMenu() {
   const content = document.querySelector('#content');
