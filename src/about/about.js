@@ -1,9 +1,11 @@
 import holmes from './holmes.png';
 import watson from './watson.png';
+import './about.css';
 
 export default function getAbout() {
   const content = document.querySelector('#content');
   content.innerHTML = '';
+  const aboutArticle = document.createElement('article');
 
   const aboutHeading = document.createElement('h1');
   aboutHeading.textContent = 'Contect us';
@@ -19,6 +21,7 @@ export default function getAbout() {
     const name = document.createElement('p');
 
     section.classList.add('aboutCard');
+    aboutArticle.classList.add('aboutArticle');
     infoDiv.classList.add('infoDiv');
     imgDiv.classList.add('imgDiv');
 
@@ -61,5 +64,6 @@ export default function getAbout() {
     return Elements.section;
   }
 
-  content.append(aboutHeading, getHolmesSection(), getWatsonSection());
+  aboutArticle.append(aboutHeading, getHolmesSection(), getWatsonSection());
+  content.append(aboutArticle);
 }
