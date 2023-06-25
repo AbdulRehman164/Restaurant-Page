@@ -1,4 +1,5 @@
 import holmes from './holmes.png';
+import watson from './watson.png';
 
 export default function getAbout() {
   const content = document.querySelector('#content');
@@ -42,12 +43,23 @@ export default function getAbout() {
     const Elements = getElements();
     Elements.rolePara.textContent = 'Cheff';
     Elements.phonePara.textContent = 'Phone Nmber : 1234-5678-910';
-    Elements.emailPara.textContent = 'Email : sherlockHolmes@bakerstret.com';
+    Elements.emailPara.textContent = 'Email : sherlockHolmes@bakerstreet.com';
     Elements.img.src = holmes;
     Elements.name.textContent = 'Sherlock Holmes';
 
     return Elements.section;
   }
 
-  content.append(aboutHeading, getHolmesSection());
+  function getWatsonSection() {
+    const Elements = getElements();
+    Elements.rolePara.textContent = 'Manager';
+    Elements.phonePara.textContent = 'Phone Nmber : 5244-2679-912';
+    Elements.emailPara.textContent = 'Email : johnWatson@bakerstreet.com';
+    Elements.img.src = watson;
+    Elements.name.textContent = 'John Watson';
+
+    return Elements.section;
+  }
+
+  content.append(aboutHeading, getHolmesSection(), getWatsonSection());
 }
