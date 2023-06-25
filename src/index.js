@@ -1,5 +1,6 @@
 import getHome from './home/home';
 import getMenu from './menu/menu';
+import getAbout from './about/about';
 import './style.css';
 
 function navBar() {
@@ -32,6 +33,8 @@ function navBar() {
       getHome();
       menu.style.background = 'chocolate';
       menu.style.color = '#efae2d';
+      about.style.background = 'chocolate';
+      about.style.color = '#efae2d';
       home.style.background = '#ffde73';
       home.style.color = 'chocolate';
     });
@@ -40,8 +43,19 @@ function navBar() {
       getMenu();
       home.style.background = 'chocolate';
       home.style.color = '#efae2d';
+      about.style.background = 'chocolate';
+      about.style.color = '#efae2d';
       menu.style.background = '#ffde73';
       menu.style.color = 'chocolate';
+    });
+    about.addEventListener('click', () => {
+      getAbout();
+      menu.style.background = 'chocolate';
+      menu.style.color = '#efae2d';
+      home.style.background = 'chocolate';
+      home.style.color = '#efae2d';
+      about.style.background = '#ffde73';
+      about.style.color = 'chocolate';
     });
 
     logoDiv.addEventListener('click', () => {
