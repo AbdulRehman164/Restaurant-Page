@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import getHome from './home/home';
 import getMenu from './menu/menu';
 import getAbout from './about/about';
@@ -7,14 +8,27 @@ function navBar() {
   const navbar = document.querySelector('#navbar');
   const logoDiv = document.createElement('div');
   const optionsDiv = document.createElement('div');
-  const home = document.createElement('div');
-  const menu = document.createElement('div');
-  const about = document.createElement('div');
+  const home = document.createElement('label');
+  const menu = document.createElement('label');
+  const about = document.createElement('label');
+
+  home.setAttribute('for', 'home');
+  menu.setAttribute('for', 'menu');
+  about.setAttribute('for', 'about');
 
   logoDiv.textContent = 'Star Bites';
   home.textContent = 'Home';
   menu.textContent = 'Menu';
   about.textContent = 'About';
+
+  const navOptions = [home, menu, about];
+  navOptions.forEach((option) => {
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'nav-option';
+    input.id = option.getAttribute('for');
+    option.appendChild(input);
+  });
 
   logoDiv.classList.add('navItem');
   optionsDiv.classList.add('option', 'navItem');
@@ -24,46 +38,27 @@ function navBar() {
   navbar.append(logoDiv, optionsDiv);
 
   function navigation() {
-    // inital rendreing
+    // initial Rendering
     getHome();
-    home.style.background = '#ffde73';
-    home.style.color = 'chocolate';
 
-    home.addEventListener('click', () => {
-      getHome();
-      menu.style.background = 'chocolate';
-      menu.style.color = '#efae2d';
-      about.style.background = 'chocolate';
-      about.style.color = '#efae2d';
-      home.style.background = '#ffde73';
-      home.style.color = 'chocolate';
-    });
-
-    menu.addEventListener('click', () => {
-      getMenu();
-      home.style.background = 'chocolate';
-      home.style.color = '#efae2d';
-      about.style.background = 'chocolate';
-      about.style.color = '#efae2d';
-      menu.style.background = '#ffde73';
-      menu.style.color = 'chocolate';
-    });
-    about.addEventListener('click', () => {
-      getAbout();
-      menu.style.background = 'chocolate';
-      menu.style.color = '#efae2d';
-      home.style.background = 'chocolate';
-      home.style.color = '#efae2d';
-      about.style.background = '#ffde73';
-      about.style.color = 'chocolate';
-    });
-
-    logoDiv.addEventListener('click', () => {
-      getHome();
-      menu.style.background = 'chocolate';
-      menu.style.color = '#efae2d';
-      home.style.background = 'chocolate';
-      home.style.color = '#efae2d';
+    const navInputs = document.querySelectorAll('input[name = "nav-option"]');
+    navInputs.forEach((input) => {
+      input.addEventListener('input', () => {
+        navInputs.forEach((navInput) => {
+          if (!navInput.checked) {
+            document.querySelector(
+              `label[for="${navInput.id}"]`
+            ).style.background = '';
+          } else {
+            if (navInput.id === 'home') getHome();
+            else if (navInput.id === 'about') getAbout();
+            else getMenu();
+            document.querySelector(
+              `label[for="${navInput.id}"]`
+            ).style.background = '#ffde73';
+          }
+        });
+      });
     });
   }
   navigation();
@@ -73,5 +68,5 @@ function getFooter() {
   const footer = document.querySelector('#footer');
   footer.innerHTML = 'Copywright&copy; Abdul-Rehman';
 }
-getFooter();
 navBar();
+getFooter();

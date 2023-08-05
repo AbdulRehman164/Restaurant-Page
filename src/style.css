@@ -44,10 +44,6 @@ nav {
   display: flex;
   height: 100%;
 }
-.option div {
-  padding: 10px;
-  border-radius: 10px;
-}
 .navItem {
   font-weight: 900;
   font-size: 3rem;
@@ -55,6 +51,14 @@ nav {
   text-shadow: 2px 2px brown;
   font-style: italic;
   cursor: pointer;
+}
+input[name='nav-option'] {
+  appearance: none;
+}
+label {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /* FOOTER */
