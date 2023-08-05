@@ -4,7 +4,7 @@ import getMenu from './menu/menu';
 import getAbout from './about/about';
 import './style.css';
 
-function navBar() {
+(function navBar() {
   const navbar = document.querySelector('#navbar');
   const logoDiv = document.createElement('div');
   const optionsDiv = document.createElement('div');
@@ -62,11 +62,9 @@ function navBar() {
     });
   }
   navigation();
-}
+})();
 
-function getFooter() {
+(function getFooter() {
   const footer = document.querySelector('#footer');
   footer.innerHTML = 'Copywright&copy; Abdul-Rehman';
-}
-navBar();
-getFooter();
+})();
